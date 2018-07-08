@@ -11,7 +11,7 @@ export default class Employee extends React.Component{
     console.log('5. Employee.class ComponentWillMount');
   }
   componentDidMount(){
-    console.log('4. Employee.class componentDidMount');
+    console.log('7. Employee.class componentDidMount');
   }
   componentWillReceiveProps(){
     console.log('Employee.class componentWillReceiveProps');
