@@ -15,7 +15,7 @@ class App extends React.Component{
     console.log('2. App.class ComponentWillMount');
   }
   componentDidMount(){
-    console.log('4. App.class componentDidMount');
+    console.log('8. App.class componentDidMount');
   }
   componentWillReceiveProps(){
     console.log('App.class componentWillReceiveProps');
