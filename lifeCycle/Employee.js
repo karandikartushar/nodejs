@@ -5,10 +5,10 @@ export default class Employee extends React.Component{
 
   constructor(props){
     super(props);
-    console.log('3. Employee.class consttructor');
+    console.log('4. Employee.class consttructor');
   }
   componentWillMount(){
-    console.log('4. Employee.class ComponentWillMount');
+    console.log('5. Employee.class ComponentWillMount');
   }
   componentDidMount(){
     console.log('4. Employee.class componentDidMount');
@@ -29,7 +29,7 @@ export default class Employee extends React.Component{
   render(){
     return(
       <div>
-        <h1>5. Employee.class render method!!! {this.props.firstName}</h1>
+        <h1>6. Employee.class render method!!! {this.props.firstName}</h1>
       </div>
     )
   }
