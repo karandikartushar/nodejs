@@ -1,1 +1,208 @@
+http://www.javatpoint.com/nodejs-first-example
+https://www.tutorialspoint.com/nodejs/index.htm
+http://shiffman.net/a2z/server-node/ 
+
+Node.js: is a sever side open source cross-platform runtime enviornment for developing serverside and networking application. NodeJs applications are written in javascript and can be run in NodeJs runtime enviornment in any OS(Windows/Linux etc.)
+
+Developing serverside application: The code written in javascript runs in NodeJs enviornment which runs on a serverside thats the reason it says NodeJs is cross-platform runtime enviornment for developing serverside and networking application.
+
+Exp: With NodeJs you can write a program (to create a server) which listens on a port and take the requests and returns response back to client/browser(https://www.tutorialspoint.com/nodejs/nodejs_web_module.htm). 
+
+NodeJs also gives you a command line enviornment to execute javascript code. it allows you to write javascript programs and run it on command line. c:\>npm hello.js
+
+A Node.js application consists of the following three important components -
+	1. Import required modules - The "require" directive is used to load a Node.js module. Then "require" comes from CommonJs, whcih we will discuss later.
+	2. Create server - A server which will listen to client's requests similar to Apache HTTP Server.
+	3. Read request and return response - Server created in the second step will read HTTP request made by client which can be a browser or console and return the response.
+there are three console methods that are used to write any node.js stream	
+	1.	console.log(): console.log('Hello JavaTpoint');   / console.log('Hello %s', 'JavaTpoint');   
+	2.	console.error(): console.error(new Error('Hell! This is a wrong method.'));
+	3.	console.warn(): const name = 'John'; console.warn(`Don't mess with me ${name}! Don't mess with me!`); 
+	
+Node.js REPL:  
+============ 
+(http://www.javatpoint.com/nodejs-repl)The term REPL stands for Read Eval Print and Loop. The Node.js or node come bundled with REPL environment.
+	Read: It reads user's input; parse the input into JavaScript data-structure and stores in memory.	
+	Eval: It takes and evaluates the data structure.	
+	Print: It prints the result.	
+	Loop: It loops the above command until user press ctrl-c twice.
+Variables are used to store values and print later. If you don't use var keyword then value is stored in the variable and printed whereas if var keyword is used then value is stored but not printed.
+
+Node.js Package Manager(NPM):
+========================
+When you work on a project you write diff components, you might need diff modules, packages their dependency as well. NPM allows you download all the required modules and their dependency. npm lets you step all the modules and their dependency into file called "package.json (alos known as configuration file)". You can either write "package.json" or you can use "npm init" command to generate the basic skeleton of the "package.json".
+
+	* It provides online repositories for node.js packages/modules which are searchable on search.nodejs.org
+	* It also provides command line utility to install Node.js packages, do version management and dependency management of Node.js packages
+	* While installing module using "npm install "module_name" you can use -- save command to save it's reference into "package.json"	
+		C:\Users\username\Desktop\reactApp>npm install react --save
+	* C:\...>npm version
+	* Global vs Local Installation(https://bretkikehara.wordpress.com/2013/05/02/nodejs-creating-your-first-global-module/
+http://gitmeet.com/post/how-to-create-a-node-js-global-module): By default, npm installs dependency in local mode. Here local mode specifies the folder where Node application is present. For example if you installed express module, it created node_modules directory in the current directory where it installed express module.
+	You can use npm ls command to list down all the locally installed modules: npm ls
+* Globally installed packages/dependencies are stored in system directory. Let's install express module using global installation. 
+	npm install express -g
+* Uninstalling a Module : npm uninstall express
+* Searching a Module: npm search express
+Example(local Vs Global): Let's say you are developing an application and you want to make changes and wants to have a hot depoyment of code rather stopping and re-starting the server again and again. to achive this you can install the module nodemon(mode monitor) "node install nodemon -g". You can install this module as a global module since you don;t need this locally into your project it's just a utility which you want to use and has nothing to do with your current application.
+
+* Node.js runs in a single-thread mode, but it uses an event-driven paradigm to handle concurrency. It also facilitates creation of child processes to leverage parallel processing on multi-core CPU based systems.
+
+Callback(https://www.tutorialspoint.com/nodejs/nodejs_callbacks_concept.htm): Callback is an asynchronous equivalent for a function.A callback function is called at the completion of a given task. Node makes heavy use of callbacks. All the APIs of Node are written in such a way that they support callbacks.
+
+
+NODE JS WEB MODULE(https://www.tutorialspoint.com/nodejs/nodejs_web_module.htm):
+
+Web Services: A web service is a collection of open protocols and standards used for exchanging data between applications or systems. Software applications written in various programming languages and running on various platforms can use web services to exchange data over computer networks.Web services based on REST Architecture are known as RESTful web services. These webservices uses HTTP methods to implement the concept of REST architecture. A RESTful web service usually defines a URI, Uniform Resource Identifier a service.
+
+* famous Node.js web framework called express:(http://shiffman.net/a2z/server-node/)
+	npm install express 
+===========================================================================================================================================
+Babel(http://www.programwitherik.com/what-is-babel-the-javascript-compiler/): Babel is a JavaScript transpiler(A source-to-source compiler, transcompiler or transpiler is a type of compiler that takes the source code of a program written in one programming language as its input and produces the equivalent source code in another programming language). Essentially Babel takes the ES2015 JavaScript code and compiles it into ES5 code. 
+Babel is a JavaScript transpiler that converts edge JavaScript into plain old ES5 JavaScript that can run in any browser (even the old ones).(http://nicholasjohnson.com/blog/what-is-babel/)
+
+(https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/)
+ECMAScript 6 (ES6)/ ECMAScript 2015 (ES2015): The 6th edition of ECMAScript, standardized in 2015. This standard has been partially implemented in most modern browsers.
+ECMAScript 5 (ES5): The 5th edition of ECMAScript, standardized in 2009. This standard has been implemented fairly completely in all modern browsers.
+===========================================================================================================================================
+In early days of Javascript, the devlopers use to dump all their javascript code inside .js file(s)and the caller use to import (<script>) these files into required files and while imporing he had to make sure the order/sequence of files being loaded/maintained also the entile javascript files use to download at the client side eventough client uses some of the function of imported file. Also for every file browser makes a HTTP call and wait for page to load until all the .js files gets downloaded to client side.
+
+With this approch developres had no way to modularize the java script code. Recently there are 2 framework(CommonJS and AMD(Asynchronous Module Definition)[requireJS]) which allows you to modularize the javascript code. By using modular(module based) javascript code you can actually make ur fuctions public, private and encapsulate your functions & properites into an object(classes).
+
+CommonJS: CommonJS uses module format to overcome the encapsulation and the scope issues to the functions and properies by using module.export & require. 
+module.export: allows module to export the properies and functions to external world.
+require: import the module.
+exports vs. module.exports: Check example [exp13, exp14] & [exp15, exp16]
+exp15(export named object):
+
+exports.addition = function(num1,num2){
+	logInput('Addition',num1,num2);
+	return num1 + num2;
+};
+
+exports.subtraction = function(num1,num2){
+	logInput('Substraction',num1,num2);
+	return num1 - num2;
+};
+// private function
+logInput = function(actionType,num1,num2){
+	console.log(actionType + ' Num1: '+ num1 + ' Num2: '+num2 );
+}
+
+exp16:
+var calc = require('./exp15.js');
+console.log('Addition: '+ calc.addition(5,3));
+console.log('Subtsraction: '+ calc.subtraction(5,3));
+
+JavaScript Prototypes: ??? exp 18 & 19. look at more advance exaple on https://darrenderidder.github.io/talks/ModulePatterns/#/8
+
+https://egghead.io/lessons/nodejs-commonjs-basics-introduction
+http://www.dotnetfunda.com/videos/show/471/commonjs-module-tutorial
+https://webpack.github.io/docs/commonjs.html
+http://enterprisewebbook.com/ch6_large_js_apps.html
+
+requireJS: alows you to lazy loading.
+
+===========================================================================================================================================
+Webpack (https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.ytu3bl3my): 
+Building applications as modules helps to improve reusability, and readability. Building forntend application with latest technologies like AngularJs, ReactJs allows application developer to build application in modules and compling and building these modules is very essential. webpack is a module builder that works great with the most modern of front-end workflows including Babel, ReactJS, CommonJS, AngularJs etc.
+
+Installing Webpack: 
+	npm install webpack -g
+Example#1:
+==========
+appjs:
+document.write('welcome to my app');
+console.log('app loaded');
+index.html:
+<html>
+  <body>
+    <script src="bundle.js"></script>
+  </body>
+</html>
+	
+C:\nodeJs_Sample\webpack\example1>webpack ./app.js bundle.js
+	Hash: a0b2c163ccbf751673c5
+	Version: webpack 2.2.1
+	Time: 140ms
+	    Asset     Size  Chunks             Chunk Names
+	bundle.js  2.57 kB       0  [emitted]  main
+	   [0] ./app.js 64 bytes {0} [built]
+   
+open index.html and see message "welcome to my app"
+
+Example#2: Defining a config file
+=========
+webpack.config.js:
+module.exports = {
+  entry: "./app.js",
+  output: {
+    filename: "bundle.js"
+  }
+}
+entry: name of the top level file or set of files that we want to include in our build, can be a single file or an array of files.
+output: an object containing your output configuration.
+
+C:\nodeJs_Sample\webpack\example2>webpack
+Hash: 90841af19ccc04c508a0
+Version: webpack 2.2.1
+Time: 125ms
+    Asset     Size  Chunks             Chunk Names
+bundle.js  2.58 kB       0  [emitted]  main
+   [0] ./app.js 67 bytes {0} [built]
+
+Note ~ look the the other examples 
+
+NOTE ~ to create physical bundle file run command "npm run build" but u need to have below in package.json
+"scripts": {
+    "start": "webpack-dev-server --hot ",
+    "build": "webpack"
+  },
+
+1. package.json (nodeJs)[npm init]: npm install module_name -- save : is the file to which keeps the details/information about all the modules amd their dependency you have installed for your project. this is similar to Maven build file
+2. webpack.config.js (webpack): is the configuration file(of ur application) which primarly holds the configuration of entry point, output file and ES & Babel configuration.
+http://www.dotnetfunda.com/videos/show/471/commonjs-module-tutorial
+https://code.tutsplus.com/tutorials/introduction-to-webpack-part-1--cms-25791
+https://julienrenaux.fr/2015/03/30/introduction-to-webpack-with-practical-examples/
+https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/
+https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.ytu3bl3my
+===========================================================================================================================================
+JSX(http://jsx.github.io/doc/tutorial.html): JSX is object oriented programming language to compiling to javascript. JSX is, however, fairly close to JavaScript especially in its statements and expressions. It is Statically-typed programming language because typos in variable names or missing function definitions, are detected at compile-time.In addition, all the functions including closures have types which are determined by the types of parameters and the return values, where you cannot call a function with incorrectly typed arguments.
+(dynamically typed vs. statically typed:http://stackoverflow.com/questions/1517582/what-is-the-difference-between-statically-typed-and-dynamically-typed-languages)
+* statically typed languages also improves the performance because all kind of checking is done at compile time hence most the bug/problems can be caught at compile time rather runtime(dynamically typed language)
+
+install JSX: npm install -g jsx
+Sample program:
+class _Main {
+    static function main(args : string[]) : void {
+        log "Hello, world!";
+    }
+}
+execution: jsx --run hello.jsx
+
+Sample program, statically typed : 
+class _Main {
+var x;
+    static function main(args : string[]) : void {
+        log "Hello, world!";
+    }
+}
+
+C:\nodeJs_Sample>jsx --run hello.jsx
+[hello.jsx:2:5] variable declaration should either have type declaration or init
+ial value
+var x;
+     ^
+JSX is javascript syntex extension looks similar to XML. It is used to build UI components in ReactJs. When you write JSX along with HTML you actually write javascript object in JSX syntax, which gets transformed into plain javascript. 
+
+npm install --global babel-cli
+babel app.jsx --out-file app.js
+===========================================================================================================================================
+DOM Vs Virtual DOM: 
+
+===========================================================================================================================================
+React Js:
+props: is the property semt by caller <Name firstName="Aayushi" lastName="Karandikar"/>
+defaultProps: is used when the caller doesn't sed expected property (C:\nodeJs_Sample\node-React\exp5).
+
 
