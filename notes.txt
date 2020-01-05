@@ -199,11 +199,67 @@ npm install --global babel-cli
 babel app.jsx --out-file app.js
 ===========================================================================================================================================
 DOM Vs Virtual DOM: 
+Application written in ReactJs use a this concept called virtual DOM wherein react keeps a copy of DOM (in memory) and wheever use make a change in DOM (any element) it compare with the copy it has in memory and update only that part of DOM back into actual DOM inspite of replacing whole DOM(tree structure) it only updates the change made by user.
+
+React’s render function creates a node tree out of the React components. It then updates this tree in response to the mutations in the data model which is caused by various actions done by the user or by the system.
 
 ===========================================================================================================================================
 React Js:
 props: is the property semt by caller <Name firstName="Aayushi" lastName="Karandikar"/>
 defaultProps: is used when the caller doesn't sed expected property (C:\nodeJs_Sample\node-React\exp5).
 
+JSX is a shorthand for JavaScript XML, React code is wirrten in JSX and then compiled to javascript ussing Babel so every browser can understand it. JSX uses ES6.
+exp#1:
+// ES5
+var React = require('react');
+// ES6
+import React from 'react';
+exp#2:
+// ES5
+module.exports = Component;
+ 
+// ES6
+export default Component;
+Exp3:
+// ES5
+var MyComponent = React.createClass({
+    render: function() {
+        return
+ 
+<h3>Hello Edureka!</h3>
+;
+    }
+});
+ 
+// ES6
+class MyComponent extends React.Component {
+    render() {
+        return
+ 
+<h3>Hello Edureka!</h3>
+;
+    }
+}
 
+Props/Properties: are read-only and are passed from parent to child component and child component can not not send pros back to parent component(is called unidirectional data flow).
+State: is the heart of react component which determine the rendering behaviour of react component. Data in state are mutable unlike the props.
+
+React component life cycle:
+
+componentWillMount() – Executed just before rendering takes place both on the client as well as server-side.
+componentDidMount() – Executed on the client side only after the first render.
+componentWillReceiveProps() – Invoked as soon as the props are received from the parent class and before another render is called.
+shouldComponentUpdate() – Returns true or false value based on certain conditions. If you want your component to update, return true else return false. By default, it returns false.
+componentWillUpdate() – Called just before rendering takes place in the DOM.
+componentDidUpdate() – Called immediately after rendering takes place.
+componentWillUnmount() – Called after the component is unmounted from the DOM. It is used to clear up the memory spaces.
+
+Refs is the short hand for References in React. It is an attribute which helps to store a reference to a particular React element or component, which will be returned by the components render configuration function
+
+Redux: state container for JavaScript applications and is used for the entire applications state management. The only way to change the state is to trigger an action. An action is a plain JS object describing the change
+Redux is composed of the following components
+1. Action – It’s an object that describes what happened.
+2. Reducer –  It is a place to determine how the state will change. Reducers are pure functions which specify how the application’s state changes in response to an ACTION.Reducers work by taking in the previous state and action, and then it returns a new state.All the actions return a new state via reducers.
+3. Store – State/ Object tree of the entire application is saved in the Store.
+4. View – Simply displays the data provided by the Store.
 Redux Example: https://www.codingame.com/playgrounds/9169/simple-redux-create-delete-contact-application
