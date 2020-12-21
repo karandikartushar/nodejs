@@ -17,8 +17,9 @@ module.exports = {
   //entry: './exp16-ref/App.js',
   //entry: './exp17-empForm/CreateEmp.js',
   //entry: './exp17-checkbox/App.js',
-  entry: './exp17-Dropdown/App.js',
+  //entry: './exp17-Dropdown/App.js',
   //entry: './exp17-Dropdown/List.js',
+  entry: './exp18-axios/App.js',
   output: {
     path: __dirname,
     filename: 'bundle.js'
