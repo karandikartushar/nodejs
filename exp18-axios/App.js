@@ -18,9 +18,12 @@ class App extends React.Component {
     }
     render() {
        return (
-        <ul>
-        { this.state.persons.map(person => <li>{person.name}</li>)}
+        <div>
+         <h1>Sample Axios call</h1>
+         <ul>
+          { this.state.persons.map(person => <li>{person.name}</li>)}
         </ul>
+        </div> 
        );
     }
  }
