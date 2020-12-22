@@ -19,7 +19,8 @@ module.exports = {
   //entry: './exp17-checkbox/App.js',
   //entry: './exp17-Dropdown/App.js',
   //entry: './exp17-Dropdown/List.js',
-  entry: './exp18-axios/App.js',
+  //entry: './exp18-axios/App.js',
+  entry: './exp18-axios-springboot/App.js',
   output: {
     path: __dirname,
     filename: 'bundle.js'
